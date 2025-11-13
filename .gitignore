@@ -1,0 +1,57 @@
+# -----------------------------
+# Visual Studio / VSCode
+# -----------------------------
+.vscode/
+*.code-workspace
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# -----------------------------
+# CMake build
+# -----------------------------
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# -----------------------------
+# Compiled binaries / DLLs / libs
+# -----------------------------
+*.exe
+*.dll
+*.lib
+*.pdb
+*.obj
+*.o
+*.a
+*.so
+*.out
+*.exp
+
+# -----------------------------
+# Redis local / server files
+# -----------------------------
+/include/redis_server/
+*.rdb
+*.aof
+*.log
+
+# -----------------------------
+# Temporary / OS files
+# -----------------------------
+*.swp
+*.tmp
+*.temp
+*.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Git submodules
+# -----------------------------
+/include/garrysmod_common/build/

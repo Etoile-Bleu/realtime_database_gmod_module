@@ -1,0 +1,10 @@
+^C:\DEV\GMOD_REALTIME_MODULE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/dev/gmod_realtime_module -BC:/dev/gmod_realtime_module/build_x64 --check-stamp-file C:/dev/gmod_realtime_module/build_x64/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

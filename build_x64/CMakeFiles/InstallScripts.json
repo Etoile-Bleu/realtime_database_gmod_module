@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/dev/gmod_realtime_module/build_x64/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
