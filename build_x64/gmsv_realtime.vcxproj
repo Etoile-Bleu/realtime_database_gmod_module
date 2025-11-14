@@ -382,6 +382,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\dev\gmod_realtime_module\src\main.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\bindings.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\connect\lua_connect.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\disconnect\lua_disconnect.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\is_connected\lua_is_connected.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\perf_stats\lua_perf_stats.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\process_events\lua_process_events.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\publish\lua_publish.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\subscribe\lua_subscribe.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\performance_stats.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\redis_client.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\subscription_manager.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

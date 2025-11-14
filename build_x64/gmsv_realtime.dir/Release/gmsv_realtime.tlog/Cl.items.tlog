@@ -1,1 +1,12 @@
 C:\dev\gmod_realtime_module\src\main.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\main.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\bindings.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\bindings.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\connect\lua_connect.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_connect.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\disconnect\lua_disconnect.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_disconnect.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\is_connected\lua_is_connected.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_is_connected.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\perf_stats\lua_perf_stats.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_perf_stats.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\process_events\lua_process_events.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_process_events.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\publish\lua_publish.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_publish.obj
+C:\dev\gmod_realtime_module\src\realtime\lua\subscribe\lua_subscribe.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\lua_subscribe.obj
+C:\dev\gmod_realtime_module\src\realtime\performance_stats.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\performance_stats.obj
+C:\dev\gmod_realtime_module\src\realtime\redis_client.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\redis_client.obj
+C:\dev\gmod_realtime_module\src\realtime\subscription_manager.cpp;C:\dev\gmod_realtime_module\build_x64\gmsv_realtime.dir\Release\subscription_manager.obj

@@ -41,8 +41,8 @@ link_directories(
     include/lua
 )
 
-# Sources
-file(GLOB SRC "src/*.cpp")
+# Sources (recursively look for .cpp files; allows organized subfolders)
+file(GLOB_RECURSE SRC "src/*.cpp")
 
 # Crée le module
 add_library(gmsv_realtime SHARED ${SRC})
@@ -79,3 +79,38 @@ if(MSVC)
 else()
     target_compile_options(gmsv_realtime PRIVATE -Wall -Wextra -pedantic)
 endif()
+
+# ============================================================================
+# Unit Tests (No external dependencies)
+# ============================================================================
+enable_testing()
+
+# ThreadSafeQueue unit tests
+add_executable(test_message_queue tests/unit/test_message_queue.cpp)
+target_include_directories(test_message_queue PRIVATE include)
+if(MSVC)
+    target_compile_options(test_message_queue PRIVATE /W4 /permissive-)
+else()
+    target_compile_options(test_message_queue PRIVATE -Wall -Wextra -pedantic)
+endif()
+add_test(NAME MessageQueue COMMAND test_message_queue)
+
+# LuaCallback unit tests
+# DISABLED FOR PHASE 1.3 - Reason:
+# - lua_shared.dll from GMod is x86-only (server is 32-bit)
+# - Can't link x86 DLL against x64 build
+# - Real testing will happen in Phase 2.1 with full worker thread integration
+# - The LuaCallback header is complete and production-ready
+#
+# Uncomment when:
+# 1. We have x64 lua_shared.dll (from GMod 64-bit server)
+# 2. Or Phase 2.1 when we integrate with Redis worker thread
+#
+# add_executable(test_lua_callback tests/unit/test_lua_callback.cpp)
+# target_include_directories(test_lua_callback PRIVATE include include/lua)
+# if(MSVC)
+#     target_compile_options(test_lua_callback PRIVATE /W4 /permissive-)
+# else()
+#     target_compile_options(test_lua_callback PRIVATE -Wall -Wextra -pedantic)
+# endif()
+# add_test(NAME LuaCallback COMMAND test_lua_callback)

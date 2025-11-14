@@ -8,6 +8,9 @@
       <FullPath>C:\dev\gmod_realtime_module\build_x86\Release\gmsv_realtime_win32.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>C:\dev\gmod_realtime_module\build_x86\Release\test_message_queue.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\dev\gmod_realtime_module\build_x86\Release\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

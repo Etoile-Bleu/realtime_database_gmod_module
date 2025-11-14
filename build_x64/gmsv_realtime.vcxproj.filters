@@ -4,6 +4,39 @@
     <ClCompile Include="C:\dev\gmod_realtime_module\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\connect\lua_connect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\disconnect\lua_disconnect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\is_connected\lua_is_connected.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\perf_stats\lua_perf_stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\process_events\lua_process_events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\publish\lua_publish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\lua\subscribe\lua_subscribe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\performance_stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\redis_client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\realtime\subscription_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\dev\gmod_realtime_module\CMakeLists.txt" />

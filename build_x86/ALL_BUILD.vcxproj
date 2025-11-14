@@ -178,6 +178,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{2DC2DE51-4645-3B4A-813B-38FAEB26657C}</Project>
       <Name>gmsv_realtime</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\dev\gmod_realtime_module\build_x86\test_message_queue.vcxproj">
+      <Project>{DF2BDCF2-50AD-3B39-BA6D-6B70E936ED04}</Project>
+      <Name>test_message_queue</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
