@@ -453,7 +453,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\dev\gmod_realtime_module\src\main.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\main_qui_marche.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,245 @@
+---------------------------------------------------------
+---                  Developer docs                   ---
+---------------------------------------------------------
+
+This addon provides a few hooks and developer functions to make modifying the addon easier.
+
+If you edit core files of the addon, updates of this addon will break your changes.
+Make sure you override functions and use hooks outside of this addon, to keep update-compatibility.
+
+
+---------------------------------------------------------
+---                 Developer hooks                   ---
+---------------------------------------------------------
+
+=> Shared
+
+MG_CTF_BelongsToFaction (ply Entity, faction string)
+Used to check, if a player belongs to a faction.
+Returning true or false will result in all other checks being skipped and the player to be considered or not considered a member of this faction.
+
+MG_CTF_CanCapture (ply Entity, ent Entity, enemy string)
+Used to check, if a player can capture a capture zone.
+Returning true or false will result in the player being or not being able to capture this zone.
+
+=> Serverside
+
+MG_CTF_AddPlayer (ent Entity, ply Entity)
+Called after a player has been added to the player table of a capture zone.
+
+MG_CTF_RemovePlayer (ent Entity, ply Entity)
+Called after a player has been removed from the player table of a capture zone.
+
+MG_CTF_CanGenerateInterest (ent Entity, typ string)
+Returning false will prevent the capture zone from generating this specific reward.
+"typ" represents the ID of the reward.
+
+MG_CTF_GenerateInterest (ent Entity, typ string, amt integer)
+Called after a capture zone generated a specific reward.
+
+MG_CTF_CanCaptureSuccess (ent Entity, old_faction string, new_faction string)
+Called before a capture zone is successfully captured by a faction.
+Return false to prevent this from happening and staying at 100% capture progress for how long you want.
+
+MG_CTF_CaptureSuccess (ent Entity, old_faction string, new_faction string)
+Called after a capture zone was successfully captured by a faction.
+
+MG_CTF_CancelCapture (ent Entity, raider_faction string)
+Called after a capture zone has recovered all capturing progress after being invaded.
+
+MG_CTF_EnableZone (ent Entity)
+Called after activating a capture zone.
+Capture zones can be deactivated, if configured in the config.
+
+MG_CTF_DisableZone (ent Entity)
+Called after deactivating a capture zone.
+Capture zones can be activated again, if configured in the config.
+
+MG_CTF_EndContested (ent Entity)
+Called after a contest is over.
+
+MG_CTF_StartContested (ent Entity)
+Called after a capture zone is marked as contested.
+This means, atleast 2 factions which are enemies are within the range of the zone and it therefore cannot progress.
+
+MG_CTF_CanBeginCapture (ent Entity, faction string)
+Called before a capture on a zone has been initiated.
+Returning false hinders the zone from being captured at all.
+
+MG_CTF_BeginCapture (ent Entity, faction string)
+Called after a capture on a zone has been initiated.
+
+MG_CTF_CanAdvert (plys table, message string, factions table, ent Entity)
+Called before an advert is passed to the players.
+Return false to prevent the advert.
+The second return argument overrides the message.
+
+MG_CTF_CanNotify (ply Entity, typ integer, leng integer, message string)
+Called before a message is sent to the player.
+Return false to prevent the message.
+The second return argument overrides the message.
+
+MG_CTF_CanCollect (ply Entity, flag Entity, typ string, amt integer, area Entity)
+Called before a player retrieves rewards from an flag entity.
+Return false to prevent the player from getting anything.
+
+MG_CTF_Collect (ply Entity, flag Entity, typ string, amt integer, area Entity)
+Called after a player retrieved rewards from an flag entity.
+
+---------------------------------------------------------
+---                    Functions                      ---
+---------------------------------------------------------
+
+=> Shared
+
+MG_CTF.GetUserGroup (ply Player)
+Used to retrieve user group of a player.
+
+MG_CTF.IsAdmin (ply Player)
+Used to retrieve if a player has access to setting up the addon.
+
+MG_CTF.FormatMoney (money integer)
+Used to format money to a correct term.
+
+MG_CTF.FormatXP (xp integer)
+Used to format XP to a correct term.
+
+MG_CTF.GetTeam (ply Player)
+Used to retrieve team of a player.
+
+MG_CTF.GetTeamColor (ply Player)
+Used to retrieve player's team color.
+
+MG_CTF.GetTeams
+Used to retrieve all teams.
+
+MG_CTF.GetFactions
+Used to retrieve all factions.
+
+MG_CTF.GetFaction (faction string)
+Used to retrieve a specific faction's table.
+
+MG_CTF.ResolveTeam (id integer)
+Translates id to a string, like a command.
+
+MG_CTF.ResolveID (id integer)
+Translates something like a command to an id.
+
+MG_CTF.GetFactionsOfPlayer (ply Entity)
+Returns all factions a player is a part of
+
+MG_CTF.BelongsToFaction (ply Player, faction string)
+Used to retrieve, if a player is a member of a specific faction.
+
+MG_CTF.CanCapture (ply Player, ent Entity, enemy string)
+Used to retrieve, if a player can capture a capture zone.
+
+MG_CTF.RetrieveColor (faction string)
+Used to retrieve a color for a faction.
+
+MG_CTF.AddFaction (name string, table)
+Adds a faction to the server.
+
+MG_CTF.GetFlagEntityName (name string)
+Returns a valid flag entity name.
+Cannot return nil.
+
+MG_CTF.GetFlagEntityModel (model string)
+Returns a valid flag entity model.
+Cannot return nil.
+
+MG_CTF.GetZoneSphereSize (size integer)
+Returns a valid zone sphere size for the setup tool to use.
+Cannot return nil.
+
+MG_CTF.Compress (tbl table)
+Compresses a table, making it ready to network.
+
+MG_CTF.Decompress (tbl table)
+Decompresses a table, so the content can be looked at.
+
+MG_CTF.Translate (str string, ...)
+Translates specific string to the selected language.
+
+
+=> Server
+
+MG_CTF.Notify (ply Entity, typ integer, leng, integer, message string)
+Used to send a message to a player.
+
+MG_CTF.Advert (factions table, message string, ent Entity)
+Sends out an advert to specific faction members or everyone, if the table is nil.
+
+MG_CTF.UpdateAll (ply Entity)
+Used to network all zones + mini map positions. If ply is nil, it will network it to all admins.
+
+MG_CTF.LoadFactions
+Loads all factions directly from disk up.
+
+MG_CTF.AddFaction (name string, tab table)
+Used to add a faction to the game.
+This is interally used to add factions to the server.
+You should only use this shared, as it does not network.
+
+MG_CTF.ClearFactions
+Clears all factions from the server.
+
+MG_CTF.UpdateFactions (ply Entity)
+Used to network all factions to a player. If ply is nil, it will network to the whole server.
+
+MG_CTF.GetFactionsCompressed
+Returns a compressed table of all saved factions.
+
+MG_CTF.NetworkTimeout (ply Entity, name string)
+Checks if a player is able to send the next net message to the server.
+Returns true or false, dependant if the player can send a net message.
+
+MG_CTF.ValidateMiniMapPositions
+Validates all mini map positions and make them network ready.
+Used internally before updating mini map positions for players.
+
+MG_CTF.UpdateMiniMapPositions (ply Entity)
+Used to network all mini map locations to a player. If ply is nil, it will network to the whole server.
+
+MG_CTF.NetworkTool (ply Entity, ent Entity)
+Opens the admin tool menu for the player.
+The given Entity should be the flag entity of a capture zone.
+
+MG_CTF.ValidateZones
+Validates all zones and make them network ready.
+Used internally before updating zones for admins.
+
+MG_CTF.UpdateZones (ply Entity)
+Used to network all zone positions to a player. If ply is nil, it will network it to all admins.
+
+MG_CTF.SetUp (first integer)
+Set's up the map with zones and flag entities.
+
+MG_CTF.DeleteMapData (map string)
+Deletes the data of a whole map.
+
+MG_CTF.Save
+Saves all capture zones
+
+MG_CTF.SaveZone (tbl table)
+Saves the data of a capture zone quickly.
+
+MG_CTF.Clear
+Clears the whole map of capture zones.
+
+=> Client
+
+MG_CTF.GetTextSize (text string, font string)
+Returns width and height of the text input.
+
+MG_CTF.OpenMiniMap
+Used to open the mini map, if it is enabled.
+This function doesn't exist, if the mini map is disabled.
+
+=> Other functions & hooks
+
+Some functions and hooks weren't intentionally mentioned, because they are only to be used internally.
+A few networking utilities, clientside libraries, etc.
+
+If you really want to take a look at them, look at the code yourself.
+This is possible, because we are against DRMs! :)

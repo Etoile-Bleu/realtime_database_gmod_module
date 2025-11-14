@@ -1,0 +1,61 @@
+---------------------------------------------------------
+---                    HELP-FILE                      ---
+---------------------------------------------------------
+
+This is a help/information file.
+Read it through, if you have problems installing, configuring or running this script.
+
+If you need direct help, contact the support team via the gmodstore ticket system!
+
+
+---------------------------------------------------------
+---                  Installation                     ---
+---------------------------------------------------------
+
+Just throw the "mg_capture_the_flag"-folder extracted in your addons-folder in "garrysmod/addons" and RESTART your server.
+If the addon loads properly and prints a few strings in your console, you have done everything right.
+
+
+---------------------------------------------------------
+---                  Configuration                    ---
+---------------------------------------------------------
+
+The config file is located at "lua/mg_ctf/sh_mg_ctf_config.lua".
+
+You shouldn't be able to mess them up as they are pretty easy to understand.
+
+Just follow the instructions in the config and read EVERYTHING carefully through, before you go on and edit config settings yourself.
+Try to restart the map, if the server was running, while you edited something in a config file or the script itself.
+
+If you get an error code, read through it, goto the line and try to fix it yourself, you likely just messed up something.
+Don't open up supports, so we fix your broken configurations.
+
+If you get an error like "table-index is nil", a team in the team-configuration has been messed up or doesn't even exist.
+Please make sure, all teams you add, exist.
+
+
+---------------------------------------------------------
+---                 Erroring & Bugs                   ---
+---------------------------------------------------------
+
+If the script throws out unexpected errors or bugs, not being introduced by yourself, be sure to contact the support team on gmodstore via a support ticket.
+Keep the error code and a pastebin of the file introducing the error ready. We might need it to HELP you.
+
+
+---------------------------------------------------------
+---                 Rights n' stuff                   ---
+---------------------------------------------------------
+
+If you feel like editing the script, go on and do it, but if YOU broke something, don't come over for support then.
+
+Don't use our code for other addons, publish it or sell it to other human living forms.
+You don't have any rights for it. Sorry, but we need to make a few bucks out of it.
+
+You have the right to use it on all YOUR game-servers (You pay or host those!) without buying it again.
+If you want to share the addon with another community, don't. You are not allowed to do that.
+
+If a server-administrator of yours, leaks our addon or publishes it in any way, you are responsible for their actions.
+So keep your RSA keys for yourself.
+
+
+I hope we could help you resolve your problems and thanks for supporting us! <3

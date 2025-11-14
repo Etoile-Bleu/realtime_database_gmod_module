@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+    "$basetexture" "models/toju/mg_ctf/mgctf_flag1"
+    "$bumpMap" "models/toju/mg_ctf/mgctf_flag1_nrm"
+    "$surfaceprop" "carpet"
+    "$phong" "1"
+    "$phongexponent" "15"
+    "$phongfresnelranges" "[0.15 0.65 1.00]"
+    "$phongalbedotint" "1"
+    "$phongboost" "1"
+    "$ambientocclusion" "1"
+    "$blendtintbybasealpha" "1"
+}
