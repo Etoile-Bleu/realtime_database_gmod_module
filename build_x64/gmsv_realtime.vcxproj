@@ -87,7 +87,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -116,36 +116,19 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";gmsv_realtime_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PreLinkEvent>
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message>Auto build dll exports</Message>
-      <Command>setlocal
-cd C:\dev\gmod_realtime_module\build_x64
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E __create_def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Debug/exports.def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Debug//objects.txt
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>hiredis.lib;lua_shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hiredis.lib;lua_shared.lib;ws2_32.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -153,7 +136,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>C:/dev/gmod_realtime_module/build_x64/Debug/gmsv_realtime_win64.lib</ImportLibrary>
       <LinkErrorReporting></LinkErrorReporting>
-      <ModuleDefinitionFile>C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Debug/exports.def</ModuleDefinitionFile>
       <ProgramDataBaseFile>C:/dev/gmod_realtime_module/build_x64/Debug/gmsv_realtime_win64.pdb</ProgramDataBaseFile>
       <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem></SubSystem>
@@ -164,7 +146,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -194,36 +176,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";gmsv_realtime_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PreLinkEvent>
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message>Auto build dll exports</Message>
-      <Command>setlocal
-cd C:\dev\gmod_realtime_module\build_x64
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E __create_def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Release/exports.def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Release//objects.txt
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>hiredis.lib;lua_shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hiredis.lib;lua_shared.lib;ws2_32.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -231,7 +196,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>C:/dev/gmod_realtime_module/build_x64/Release/gmsv_realtime_win64.lib</ImportLibrary>
       <LinkErrorReporting></LinkErrorReporting>
-      <ModuleDefinitionFile>C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/Release/exports.def</ModuleDefinitionFile>
       <ProgramDataBaseFile>C:/dev/gmod_realtime_module/build_x64/Release/gmsv_realtime_win64.pdb</ProgramDataBaseFile>
       <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem></SubSystem>
@@ -242,7 +206,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -272,36 +236,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";gmsv_realtime_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PreLinkEvent>
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message>Auto build dll exports</Message>
-      <Command>setlocal
-cd C:\dev\gmod_realtime_module\build_x64
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E __create_def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/MinSizeRel/exports.def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/MinSizeRel//objects.txt
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>hiredis.lib;lua_shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hiredis.lib;lua_shared.lib;ws2_32.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -309,7 +256,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>C:/dev/gmod_realtime_module/build_x64/MinSizeRel/gmsv_realtime_win64.lib</ImportLibrary>
       <LinkErrorReporting></LinkErrorReporting>
-      <ModuleDefinitionFile>C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/MinSizeRel/exports.def</ModuleDefinitionFile>
       <ProgramDataBaseFile>C:/dev/gmod_realtime_module/build_x64/MinSizeRel/gmsv_realtime_win64.pdb</ProgramDataBaseFile>
       <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem></SubSystem>
@@ -320,7 +266,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -349,36 +295,19 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";gmsv_realtime_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
       <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
-    <PreLinkEvent>
-      <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message>Auto build dll exports</Message>
-      <Command>setlocal
-cd C:\dev\gmod_realtime_module\build_x64
-if %errorlevel% neq 0 goto :cmEnd
-C:
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E __create_def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/RelWithDebInfo/exports.def C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/RelWithDebInfo//objects.txt
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-    </PreLinkEvent>
     <Link>
-      <AdditionalDependencies>hiredis.lib;lua_shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hiredis.lib;lua_shared.lib;ws2_32.lib;crypt32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release;C:/dev/gmod_realtime_module/include/hiredis/build_x64_static/Release/$(Configuration);C:/dev/gmod_realtime_module/include/lua;C:/dev/gmod_realtime_module/include/lua/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -386,7 +315,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
       <ImportLibrary>C:/dev/gmod_realtime_module/build_x64/RelWithDebInfo/gmsv_realtime_win64.lib</ImportLibrary>
       <LinkErrorReporting></LinkErrorReporting>
-      <ModuleDefinitionFile>C:/dev/gmod_realtime_module/build_x64/gmsv_realtime.dir/RelWithDebInfo/exports.def</ModuleDefinitionFile>
       <ProgramDataBaseFile>C:/dev/gmod_realtime_module/build_x64/RelWithDebInfo/gmsv_realtime_win64.pdb</ProgramDataBaseFile>
       <RandomizedBaseAddress></RandomizedBaseAddress>
       <SubSystem></SubSystem>
@@ -453,7 +381,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\dev\gmod_realtime_module\src\main_qui_marche.cpp" />
+    <ClCompile Include="C:\dev\gmod_realtime_module\src\main.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

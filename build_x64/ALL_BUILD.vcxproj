@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\gmod_realtime_module\include;C:\dev\gmod_realtime_module\include\lua;C:\dev\gmod_realtime_module\include\garrysmod_common\include;C:\dev\gmod_realtime_module\include\hiredis;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

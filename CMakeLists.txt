@@ -4,19 +4,23 @@ project(gmsv_realtime)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+# ✅ Force DYNAMIC runtime MSVC to match hiredis pre-built library
+if(MSVC)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+endif()
 
 # Detect architecture
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(ARCH "64")
     set(ARCH_SUFFIX "x64")
     set(LUA_LIB "lua_shared")
-    set(HIREDIS_BUILD_DIR "build_x64")
+    set(HIREDIS_BUILD_DIR "build_x64_static")
 elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
     set(ARCH "32")
     set(ARCH_SUFFIX "x86")
     set(LUA_LIB "lua_shared_x86")
-    set(HIREDIS_BUILD_DIR "build_x86")
+    set(HIREDIS_BUILD_DIR "build_x86_static")
 else()
     message(FATAL_ERROR "Unknown architecture")
 endif()
@@ -28,6 +32,7 @@ include_directories(
     include
     include/lua
     include/garrysmod_common/include
+    include/hiredis  # ✅ Ajouter headers hiredis
 )
 
 # Add library directories for Hiredis
@@ -48,11 +53,20 @@ set_target_properties(gmsv_realtime PROPERTIES
     OUTPUT_NAME "gmsv_realtime_win${ARCH}"
 )
 
-# Link avec Hiredis et lua_shared
-target_link_libraries(gmsv_realtime 
-    hiredis
-    ${LUA_LIB}
-)
+# ✅ Link STATIQUEMENT hiredis + ws2_32 (Windows Sockets)
+if(MSVC)
+    target_link_libraries(gmsv_realtime 
+        hiredis          # ← Static hiredis compiled with /MD
+        ${LUA_LIB}
+        ws2_32           # ← Requis par hiredis sur Windows
+        crypt32          # ← Cryptography API required by hiredis
+    )
+else()
+    target_link_libraries(gmsv_realtime 
+        hiredis
+        ${LUA_LIB}
+    )
+endif()
 
 # Suppress C4200 warnings from hiredis headers
 if(MSVC)
