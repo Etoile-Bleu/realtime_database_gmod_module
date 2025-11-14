@@ -61,17 +61,18 @@ foreach ($Arch in $Architectures) {
     # Compile le projet en Release
     Write-Host "Compilation en Release pour $ArchName..." -ForegroundColor Cyan
     cmake --build . --config Release
-    if ($LASTEXITCODE -ne 0) { 
+    $buildExitCode = $LASTEXITCODE
+    Pop-Location
+    
+    if ($buildExitCode -ne 0) { 
         Write-Error "Erreur compilation pour $ArchName"
-        Pop-Location
-        exit $LASTEXITCODE 
+        exit $buildExitCode 
     }
     
     # Cherche la DLL générée
     $DLLPath = Get-ChildItem -Path $ReleaseDir -Name "gmsv_realtime*.dll" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
     if ($null -eq $DLLPath) {
         Write-Error "DLL gmsv_realtime*.dll non trouvée dans $ReleaseDir"
-        Pop-Location
         exit 1
     }
     
@@ -82,9 +83,6 @@ foreach ($Arch in $Architectures) {
     Write-Host "Copie de la DLL vers $GMODLuaBinDir..." -ForegroundColor Cyan
     Copy-Item $DLLFullPath -Destination $GMODLuaBinDir -Force
     Write-Host "DLL copiee avec succes" -ForegroundColor Green
-    
-    # Retour au répertoire précédent
-    Pop-Location
 }
 
 Write-Host "`n========================================" -ForegroundColor Green

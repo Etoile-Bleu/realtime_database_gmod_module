@@ -1,120 +1,205 @@
-#include <lua.hpp>
+#include <GarrysMod/Lua/Interface.h>
 #include <hiredis/hiredis.h>
 #include <iostream>
 #include <memory>
 #include <string>
-#include <cstring>
+#include <sstream>
 
-// Global Redis context (simplified for POC)
-static redisContext* g_redis = nullptr;
+// RAII wrapper for Redis context
+struct RedisContextDeleter {
+    void operator()(redisContext* ctx) const {
+        if (ctx) redisFree(ctx);
+    }
+};
 
-// Forward declaration
-static int CreateModuleTable(lua_State* L);
+struct RedisReplyDeleter {
+    void operator()(redisReply* reply) const {
+        if (reply) freeReplyObject(reply);
+    }
+};
+
+static std::unique_ptr<redisContext, RedisContextDeleter> g_redis = nullptr;
 
 // Lua function: realtime.Connect(host, port)
-static int Lua_Connect(lua_State* L) {
-    const char* host = luaL_checkstring(L, 1);
-    lua_Integer port_lua = luaL_checkinteger(L, 2);
-    int port = static_cast<int>(port_lua);
+LUA_FUNCTION(Lua_Connect) {
+    const char* host = LUA->CheckString(1);
+    int port = static_cast<int>(LUA->CheckNumber(2));
     
-    // Close existing connection
-    if (g_redis != nullptr) {
-        redisFree(g_redis);
-        g_redis = nullptr;
-    }
+    g_redis.reset(redisConnect(host, port));
     
-    // Connect to Redis
-    g_redis = redisConnect(host, port);
-    
-    if (g_redis == nullptr || g_redis->err) {
-        std::cout << "[Redis] Connection failed!" << std::endl;
-        lua_pushboolean(L, false);
+    if (!g_redis || g_redis->err) {
+        std::cout << "[Redis] Connection failed: " << (g_redis ? g_redis->errstr : "Unknown error") << std::endl;
+        LUA->PushBool(false);
         return 1;
     }
     
     std::cout << "[Redis] Connected to " << host << ":" << port << std::endl;
-    lua_pushboolean(L, true);
+    LUA->PushBool(true);
     return 1;
 }
 
-// Lua function: realtime.Publish(channel, message)
-static int Lua_Publish(lua_State* L) {
-    const char* channel = luaL_checkstring(L, 1);
-    const char* message = luaL_checkstring(L, 2);
+LUA_FUNCTION(Lua_Publish) {
+    const char* channel = LUA->CheckString(1);
+    const char* message = LUA->CheckString(2);
     
-    if (g_redis == nullptr) {
+    if (!g_redis) {
         std::cout << "[Redis] Not connected!" << std::endl;
-        lua_pushboolean(L, false);
+        LUA->PushBool(false);
         return 1;
     }
     
-    redisReply* reply = static_cast<redisReply*>(
-        redisCommand(g_redis, "PUBLISH %s %s", channel, message)
+    std::unique_ptr<redisReply, RedisReplyDeleter> reply(
+        static_cast<redisReply*>(redisCommand(g_redis.get(), "PUBLISH %s %s", channel, message))
     );
     
-    if (reply == nullptr) {
-        std::cout << "[Redis] Publish command failed!" << std::endl;
-        lua_pushboolean(L, false);
+    if (!reply) {
+        std::cout << "[Redis] Publish failed!" << std::endl;
+        LUA->PushBool(false);
         return 1;
     }
     
-    freeReplyObject(reply);
-    lua_pushboolean(L, true);
+    LUA->PushBool(true);
     return 1;
 }
 
-// Lua function: realtime.Subscribe(channel, callback)
-static int Lua_Subscribe(lua_State* L) {
-    const char* channel = luaL_checkstring(L, 1);
+// POC: Player action tracking
+// Usage: realtime.PlayerAction(player_name, action_type, details)
+LUA_FUNCTION(Lua_PlayerAction) {
+    const char* player_name = LUA->CheckString(1);
+    const char* action_type = LUA->CheckString(2);
+    const char* details = LUA->CheckString(3);
     
-    if (g_redis == nullptr) {
+    if (!g_redis) {
         std::cout << "[Redis] Not connected!" << std::endl;
-        lua_pushboolean(L, false);
+        LUA->PushBool(false);
         return 1;
     }
     
-    // For now, just acknowledge subscription (full implementation would need threading)
-    std::cout << "[Redis] Subscribed to channel: " << channel << std::endl;
-    lua_pushboolean(L, true);
+    // Build JSON-like message (simple format)
+    std::ostringstream message;
+    message << "{\"player\":\"" << player_name 
+            << "\",\"action\":\"" << action_type 
+            << "\",\"details\":\"" << details 
+            << "\",\"timestamp\":" << std::time(nullptr) << "}";
+    
+    std::string msg_str = message.str();
+    
+    std::unique_ptr<redisReply, RedisReplyDeleter> reply(
+        static_cast<redisReply*>(redisCommand(
+            g_redis.get(), 
+            "PUBLISH player:actions %s", 
+            msg_str.c_str()
+        ))
+    );
+    
+    if (!reply) {
+        std::cout << "[Redis] PlayerAction publish failed!" << std::endl;
+        LUA->PushBool(false);
+        return 1;
+    }
+    
+    std::cout << "[Redis] Player action published: " << player_name << " - " << action_type << std::endl;
+    LUA->PushBool(true);
     return 1;
 }
 
-// Lua function: realtime.Disconnect()
-static int Lua_Disconnect(lua_State* L) {
-    (void)L;  // Suppress unused parameter warning
-    if (g_redis != nullptr) {
-        redisFree(g_redis);
-        g_redis = nullptr;
+// POC: Player kill event
+// Usage: realtime.PlayerKill(killer_name, victim_name, weapon)
+LUA_FUNCTION(Lua_PlayerKill) {
+    const char* killer = LUA->CheckString(1);
+    const char* victim = LUA->CheckString(2);
+    const char* weapon = LUA->CheckString(3);
+    
+    if (!g_redis) {
+        std::cout << "[Redis] Not connected!" << std::endl;
+        LUA->PushBool(false);
+        return 1;
+    }
+    
+    std::ostringstream message;
+    message << "{\"killer\":\"" << killer 
+            << "\",\"victim\":\"" << victim 
+            << "\",\"weapon\":\"" << weapon 
+            << "\",\"timestamp\":" << std::time(nullptr) << "}";
+    
+    std::string msg_str = message.str();
+    
+    std::unique_ptr<redisReply, RedisReplyDeleter> reply(
+        static_cast<redisReply*>(redisCommand(
+            g_redis.get(), 
+            "PUBLISH player:kills %s", 
+            msg_str.c_str()
+        ))
+    );
+    
+    if (!reply) {
+        std::cout << "[Redis] PlayerKill publish failed!" << std::endl;
+        LUA->PushBool(false);
+        return 1;
+    }
+    
+    std::cout << "[Redis] Kill event: " << killer << " killed " << victim << " with " << weapon << std::endl;
+    LUA->PushBool(true);
+    return 1;
+}
+
+LUA_FUNCTION(Lua_Subscribe) {
+    const char* channel = LUA->CheckString(1);
+    
+    if (!g_redis) {
+        std::cout << "[Redis] Not connected!" << std::endl;
+        LUA->PushBool(false);
+        return 1;
+    }
+    
+    std::cout << "[Redis] Subscribed to: " << channel << std::endl;
+    LUA->PushBool(true);
+    return 1;
+}
+
+LUA_FUNCTION(Lua_Disconnect) {
+    if (g_redis) {
+        g_redis.reset();
         std::cout << "[Redis] Disconnected" << std::endl;
     }
     return 0;
 }
 
-// Module entry point for standard Lua loading (for require())
-// GMod looks for luaopen_<modulename> where modulename is the part after gmsv_/gmcl_
-// For gmsv_realtime_win32.dll, GMod calls luaopen_realtime (removes prefix and arch)
-static int CreateModuleTable(lua_State* L) {
-    // Create the module table
-    lua_newtable(L);
+// GMod Module Entry Point
+GMOD_MODULE_OPEN() {
+    std::cout << "[Realtime] Module loading..." << std::endl;
     
-    // Register functions
-    lua_pushcfunction(L, Lua_Connect);
-    lua_setfield(L, -2, "Connect");
+    LUA->PushSpecial(GarrysMod::Lua::SPECIAL_GLOB);
+    LUA->CreateTable();
     
-    lua_pushcfunction(L, Lua_Publish);
-    lua_setfield(L, -2, "Publish");
+    LUA->PushCFunction(Lua_Connect);
+    LUA->SetField(-2, "Connect");
     
-    lua_pushcfunction(L, Lua_Subscribe);
-    lua_setfield(L, -2, "Subscribe");
+    LUA->PushCFunction(Lua_Publish);
+    LUA->SetField(-2, "Publish");
     
-    lua_pushcfunction(L, Lua_Disconnect);
-    lua_setfield(L, -2, "Disconnect");
+    LUA->PushCFunction(Lua_Subscribe);
+    LUA->SetField(-2, "Subscribe");
     
-    // Return the module table
-    return 1;
+    LUA->PushCFunction(Lua_Disconnect);
+    LUA->SetField(-2, "Disconnect");
+    
+    // POC Functions
+    LUA->PushCFunction(Lua_PlayerAction);
+    LUA->SetField(-2, "PlayerAction");
+    
+    LUA->PushCFunction(Lua_PlayerKill);
+    LUA->SetField(-2, "PlayerKill");
+    
+    LUA->SetField(-2, "realtime");
+    LUA->Pop();
+    
+    std::cout << "[Realtime] Module loaded successfully" << std::endl;
+    return 0;
 }
 
-extern "C" int luaopen_realtime(lua_State* L) {
-    std::cout << "[Module] Loading realtime module" << std::endl;
-    return CreateModuleTable(L);
+GMOD_MODULE_CLOSE() {
+    std::cout << "[Realtime] Module unloading..." << std::endl;
+    g_redis.reset();
+    return 0;
 }

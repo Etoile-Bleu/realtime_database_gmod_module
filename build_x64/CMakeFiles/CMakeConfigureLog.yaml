@@ -59,6 +59,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -75,7 +76,7 @@ events:
       The output was:
       0
       Version MSBuild 17.14.23+b0019275e pour .NET Framework
-      La g├®n├®ration a d├®marr├® 13/11/2025 23:12:38.
+      La g├®n├®ration a d├®marr├® 14/11/2025 01:02:15.
       
       Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\4.2.0-rc3\\CompilerIdC\\CompilerIdC.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
       PrepareForBuild:
@@ -161,6 +162,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
@@ -190,6 +192,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -237,6 +240,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
@@ -335,6 +339,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -380,6 +385,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
@@ -409,6 +415,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -454,6 +461,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
@@ -530,6 +538,9 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/mt.com"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/mt.exe"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/mt"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/mt.com"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/mt.exe"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/mt"
     found: false
     search_context:
       ENV{PATH}:
@@ -557,6 +568,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -602,6 +614,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
     found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
@@ -631,6 +644,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -682,6 +696,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -698,7 +713,7 @@ events:
       The output was:
       0
       Version MSBuild 17.14.23+b0019275e pour .NET Framework
-      La g├®n├®ration a d├®marr├® 13/11/2025 23:12:38.
+      La g├®n├®ration a d├®marr├® 14/11/2025 01:02:16.
       
       Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\4.2.0-rc3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
       PrepareForBuild:
@@ -727,7 +742,7 @@ events:
           0 Avertissement(s)
           0 Erreur(s)
       
-      Temps ├®coul├® 00:00:00.29
+      Temps ├®coul├® 00:00:00.31
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -784,6 +799,7 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Program Files/LLVM/bin/"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -869,6 +885,9 @@ events:
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/rc.com"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/rc.exe"
       - "C:/Users/Tigre/AppData/Local/Programs/Ollama/rc"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/rc.com"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/rc.exe"
+      - "C:/Users/Tigre/.vscode/extensions/ms-python.debugpy-2025.16.0-win32-x64/bundled/scripts/noConfigScripts/rc"
       - "C:/Program Files/bin/rc.com"
       - "C:/Program Files/bin/rc.exe"
       - "C:/Program Files/bin/rc"
@@ -932,6 +951,7 @@ events:
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Program Files\\LLVM\\bin"
         - "C:\\Users\\Tigre\\AppData\\Local\\Programs\\Ollama"
+        - "c:\\Users\\Tigre\\.vscode\\extensions\\ms-python.debugpy-2025.16.0-win32-x64\\bundled\\scripts\\noConfigScripts"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/gmsv_realtime"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -947,8 +967,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-zao2an"
-      binary: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-zao2an"
+      source: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-gxasr7"
+      binary: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-gxasr7"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -957,39 +977,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-zao2an'
+        Change Dir: 'C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-gxasr7'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c0875.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d4d92.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Version MSBuild 17.14.23+b0019275e pour .NET Framework
-        La g├®n├®ration a d├®marr├® 13/11/2025 23:12:38.
+        La g├®n├®ration a d├®marr├® 14/11/2025 01:02:16.
         
-        Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-zao2an\\cmTC_c0875.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
+        Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gxasr7\\cmTC_d4d92.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
         PrepareForBuild:
           La sortie structur├®e est activ├®e. La mise en forme du compilateur diagnostics refl├¿te la hi├®rarchie des erreurs. Pour plus dÔÇÖinformations, consultez https://aka.ms/cpp/structured-output.
-          Cr├®ation du r├®pertoire "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-zao2an\\Debug\\".
-          Cr├®ation du r├®pertoire "cmTC_c0875.dir\\Debug\\cmTC_c0875.tlog\\".
+          Cr├®ation du r├®pertoire "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gxasr7\\Debug\\".
+          Cr├®ation du r├®pertoire "cmTC_d4d92.dir\\Debug\\cmTC_d4d92.tlog\\".
         InitializeBuildStatus:
-          Cr├®ation de "cmTC_c0875.dir\\Debug\\cmTC_c0875.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ├®t├® sp├®cifi├®.
-          Mise ├á jour de l'horodatage "cmTC_c0875.dir\\Debug\\cmTC_c0875.tlog\\unsuccessfulbuild".
+          Cr├®ation de "cmTC_d4d92.dir\\Debug\\cmTC_d4d92.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ├®t├® sp├®cifi├®.
+          Mise ├á jour de l'horodatage "cmTC_d4d92.dir\\Debug\\cmTC_d4d92.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c0875.dir\\Debug\\\\" /Fd"cmTC_c0875.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d4d92.dir\\Debug\\\\" /Fd"cmTC_d4d92.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           Compilateur d'optimisation Microsoft (R) C/C++ version┬á19.44.35220 pour x64
           Copyright (C) Microsoft Corporation. Tous droits r├®serv├®s.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c0875.dir\\Debug\\\\" /Fd"cmTC_c0875.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d4d92.dir\\Debug\\\\" /Fd"cmTC_d4d92.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-zao2an\\Debug\\cmTC_c0875.exe" /INCREMENTAL /ILK:"cmTC_c0875.dir\\Debug\\cmTC_c0875.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-zao2an/Debug/cmTC_c0875.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-zao2an/Debug/cmTC_c0875.lib" /MACHINE:X64  /machine:x64 cmTC_c0875.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_c0875.vcxproj -> C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-zao2an\\Debug\\cmTC_c0875.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gxasr7\\Debug\\cmTC_d4d92.exe" /INCREMENTAL /ILK:"cmTC_d4d92.dir\\Debug\\cmTC_d4d92.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-gxasr7/Debug/cmTC_d4d92.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-gxasr7/Debug/cmTC_d4d92.lib" /MACHINE:X64  /machine:x64 cmTC_d4d92.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_d4d92.vcxproj -> C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gxasr7\\Debug\\cmTC_d4d92.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_c0875.dir\\Debug\\cmTC_c0875.tlog\\unsuccessfulbuild".
-          Mise ├á jour de l'horodatage "cmTC_c0875.dir\\Debug\\cmTC_c0875.tlog\\cmTC_c0875.lastbuildstate".
-        G├®n├®ration du projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-zao2an\\cmTC_c0875.vcxproj" termin├®e (cibles par d├®faut).
+          Suppression du fichier "cmTC_d4d92.dir\\Debug\\cmTC_d4d92.tlog\\unsuccessfulbuild".
+          Mise ├á jour de l'horodatage "cmTC_d4d92.dir\\Debug\\cmTC_d4d92.tlog\\cmTC_d4d92.lastbuildstate".
+        G├®n├®ration du projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-gxasr7\\cmTC_d4d92.vcxproj" termin├®e (cibles par d├®faut).
         
         La g├®n├®ration a r├®ussi.
             0 Avertissement(s)
             0 Erreur(s)
         
-        Temps ├®coul├® 00:00:00.29
+        Temps ├®coul├® 00:00:00.28
         
       exitCode: 0
   -
@@ -1029,8 +1049,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-2fonuw"
-      binary: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-2fonuw"
+      source: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-34055n"
+      binary: "C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-34055n"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1040,33 +1060,33 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-2fonuw'
+        Change Dir: 'C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-34055n'
         
-        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_afb38.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6ba4d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Version MSBuild 17.14.23+b0019275e pour .NET Framework
-        La g├®n├®ration a d├®marr├® 13/11/2025 23:12:39.
+        La g├®n├®ration a d├®marr├® 14/11/2025 01:02:17.
         
-        Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-2fonuw\\cmTC_afb38.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
+        Projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-34055n\\cmTC_6ba4d.vcxproj" sur le n┼ôud 1 (cibles par d├®faut).
         PrepareForBuild:
           La sortie structur├®e est activ├®e. La mise en forme du compilateur diagnostics refl├¿te la hi├®rarchie des erreurs. Pour plus dÔÇÖinformations, consultez https://aka.ms/cpp/structured-output.
-          Cr├®ation du r├®pertoire "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-2fonuw\\Debug\\".
-          Cr├®ation du r├®pertoire "cmTC_afb38.dir\\Debug\\cmTC_afb38.tlog\\".
+          Cr├®ation du r├®pertoire "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-34055n\\Debug\\".
+          Cr├®ation du r├®pertoire "cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.tlog\\".
         InitializeBuildStatus:
-          Cr├®ation de "cmTC_afb38.dir\\Debug\\cmTC_afb38.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ├®t├® sp├®cifi├®.
-          Mise ├á jour de l'horodatage "cmTC_afb38.dir\\Debug\\cmTC_afb38.tlog\\unsuccessfulbuild".
+          Cr├®ation de "cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.tlog\\unsuccessfulbuild", car "AlwaysCreate" a ├®t├® sp├®cifi├®.
+          Mise ├á jour de l'horodatage "cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_afb38.dir\\Debug\\\\" /Fd"cmTC_afb38.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_6ba4d.dir\\Debug\\\\" /Fd"cmTC_6ba4d.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Compilateur d'optimisation Microsoft (R) C/C++ version┬á19.44.35220 pour x64
           Copyright (C) Microsoft Corporation. Tous droits r├®serv├®s.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_afb38.dir\\Debug\\\\" /Fd"cmTC_afb38.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_6ba4d.dir\\Debug\\\\" /Fd"cmTC_6ba4d.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-2fonuw\\Debug\\cmTC_afb38.exe" /INCREMENTAL /ILK:"cmTC_afb38.dir\\Debug\\cmTC_afb38.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-2fonuw/Debug/cmTC_afb38.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-2fonuw/Debug/cmTC_afb38.lib" /MACHINE:X64  /machine:x64 cmTC_afb38.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_afb38.vcxproj -> C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-2fonuw\\Debug\\cmTC_afb38.exe
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-34055n\\Debug\\cmTC_6ba4d.exe" /INCREMENTAL /ILK:"cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-34055n/Debug/cmTC_6ba4d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/dev/gmod_realtime_module/build_x64/CMakeFiles/CMakeScratch/TryCompile-34055n/Debug/cmTC_6ba4d.lib" /MACHINE:X64  /machine:x64 cmTC_6ba4d.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6ba4d.vcxproj -> C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-34055n\\Debug\\cmTC_6ba4d.exe
         FinalizeBuildStatus:
-          Suppression du fichier "cmTC_afb38.dir\\Debug\\cmTC_afb38.tlog\\unsuccessfulbuild".
-          Mise ├á jour de l'horodatage "cmTC_afb38.dir\\Debug\\cmTC_afb38.tlog\\cmTC_afb38.lastbuildstate".
-        G├®n├®ration du projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-2fonuw\\cmTC_afb38.vcxproj" termin├®e (cibles par d├®faut).
+          Suppression du fichier "cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.tlog\\unsuccessfulbuild".
+          Mise ├á jour de l'horodatage "cmTC_6ba4d.dir\\Debug\\cmTC_6ba4d.tlog\\cmTC_6ba4d.lastbuildstate".
+        G├®n├®ration du projet "C:\\dev\\gmod_realtime_module\\build_x64\\CMakeFiles\\CMakeScratch\\TryCompile-34055n\\cmTC_6ba4d.vcxproj" termin├®e (cibles par d├®faut).
         
         La g├®n├®ration a r├®ussi.
             0 Avertissement(s)
